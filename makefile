@@ -1,5 +1,8 @@
-point: point.o main.o
-	gcc -Wall -g -o point point.o main.o
+point: point.o main.o map.o
+	gcc -Wall -g -o point point.o main.o map.o
+
+map.o: map.c map.h point.h types.h
+	gcc -Wall -g -c map.c
 
 point.o: point.c point.h types.h
 	gcc -Wall -g -c point.c
